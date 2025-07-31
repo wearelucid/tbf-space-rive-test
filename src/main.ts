@@ -31,8 +31,6 @@ const img1 = (imageProperty) => {
 };
 
 
-
-
 // Prepare outside references to the Rive ViewModel instances
 const riveRefs = {
   tileInstances: {
@@ -72,7 +70,7 @@ const r = new rive.Rive({
       vmi.viewModel('tileWasteManagement')?.boolean('discovered')?.on((event) => {
         console.log('changed?', event);
       });
-      vmi.viewModel('tileWasteManagement')?.viewModel('indicatorArrowSaegi')?.trigger('clicked')?.on(() => {
+      vmi.viewModel('tileWasteManagement')?.trigger('indicatorArrowSaegi/clicked')?.on(() => {
         console.log('sägi clicked');
         alert('Event from nested ViewModel: indicatorArrowSaegi clicked');
       });
